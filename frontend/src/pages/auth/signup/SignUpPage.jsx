@@ -17,7 +17,7 @@ const SignUpPage = () => {
 		fullName: "",
 		password: "",
 	});
-
+	
 console.log("formData=>",formData);
 
 
@@ -26,8 +26,8 @@ console.log("formData=>",formData);
 	const { mutate, isError, isPending, error } = useMutation({
 		mutationFn: async ({ email, username, fullName, password }) => {
 			try {
-				const res = await fetch("http://locahost:8000/api/auth/signup", {
-					method: "POST",........
+				const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/auth/signup`, {
+					method: "POST",
 					headers: {
 						"Content-Type": "application/json",
 					},
